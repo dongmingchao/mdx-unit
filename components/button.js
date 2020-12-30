@@ -1,5 +1,11 @@
+import TestMd, * as rest from './testmd.mdx';
+
 export default function Button({ children }) {
   return (
+    <>
+    <TestMd />
+    布尔值显示{true}
+    <br />
     <button
       style={{
         borderRadius: '3px',
@@ -12,5 +18,6 @@ export default function Button({ children }) {
     >
       {children}
     </button>
+    </>
   )
 }
