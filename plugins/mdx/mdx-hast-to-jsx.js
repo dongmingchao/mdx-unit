@@ -245,7 +245,7 @@ export default ${fnPostMdxTypeProp}`
     if (node.value === '\n' && !shouldPreserveNewlines) {
       return node.value
     }
-    const escaped = replaceAll(node.value, /\{.+\}/gi, r => `{props.${r.slice(1, -1)} ?? ${toTemplateLiteral(r)}}`);
+    const escaped = replaceAll(node.value, /\{.+\}/gi, r => `{props[${toTemplateLiteral(r.slice(1, -1))}] ?? ${toTemplateLiteral(r)}}`);
     return escaped;
   }
 
